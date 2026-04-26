@@ -1,53 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #faf9f7;
-  --color-bg-dark: #1a1916;
-  --color-text: #1a1916;
-  --color-text-muted: #6b6860;
-  --color-text-light: #e8e6e2;
-  --color-accent: #c8a96e;
-  --color-accent-hover: #b8954e;
-  --color-surface: #f2f0ec;
-  --color-border: rgba(26, 25, 22, 0.08);
+  --surface: #141313;
+  --surface-main: #1A1A1A;
+  --surface-card: #242424;
+  --surface-container: #201f1f;
+  --surface-container-high: #2b2a2a;
+  --surface-container-highest: #353434;
+  --surface-container-lowest: #0e0e0e;
+  --on-surface: #e5e2e1;
+  --on-surface-variant: #c4c7c7;
+  --outline: #8e9192;
+  --outline-variant: #444748;
+  --accent-red: #E31E24;
+  --neutral-silver: #F5F5F5;
+  --text-on-dark: #FFFFFF;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--surface-main);
+  color: var(--on-surface);
   -webkit-font-smoothing: antialiased;
+}
+
+.glass-panel {
+  background: rgba(36, 36, 36, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 245, 245, 0.08);
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
-
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-32px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(32px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-.hero-text { animation: fadeInLeft 0.6s ease-out both; }
-.hero-image { animation: fadeInRight 0.6s ease-out 0.2s both; }
+.hero-text { animation: fadeInUp 0.6s ease-out both; }
+.hero-image { animation: fadeInUp 0.6s ease-out 0.2s both; }
