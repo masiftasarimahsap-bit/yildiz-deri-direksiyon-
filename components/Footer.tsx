@@ -31,7 +31,7 @@ export default function Footer() {
               0546 637 98 01
             </a>
             <a
-              href="https://instagram.com/yildizderidireksiyon"
+              href="https://www.instagram.com/yildizderidireksiyon/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-500 hover:text-[#E31E24] transition-colors"
