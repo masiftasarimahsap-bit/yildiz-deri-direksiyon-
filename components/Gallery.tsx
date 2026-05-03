@@ -36,14 +36,11 @@ const items = [
   { id: "29", brand: "Diğer", model: "Peugeot 308", color: "Siyah + beyaz dikiş", filter: "Diğer" },
 ];
 
-const filters = ["Tümü", "Ford", "Fiat", "Renault", "Toyota", "Diğer"];
-
 export default function Gallery() {
-  const [active, setActive] = useState("Tümü");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const ref = useScrollReveal();
 
-  const filtered = active === "Tümü" ? items : items.filter((i) => i.filter === active);
+  const filtered = items;
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -71,23 +68,6 @@ export default function Gallery() {
             </h2>
             <p className="text-[15px] text-zinc-400">Detaylardaki kusursuzluğu keşfedin.</p>
           </div>
-        </div>
-
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => setActive(f)}
-              className={`px-4 py-2 rounded text-[13px] font-semibold tracking-wide transition-all duration-200 ${
-                active === f
-                  ? "bg-[#E31E24] text-white"
-                  : "bg-[#242424] text-zinc-400 hover:text-white border border-zinc-700"
-              }`}
-            >
-              {f}
-            </button>
-          ))}
         </div>
 
         {/* Grid */}
